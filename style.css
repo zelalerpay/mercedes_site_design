@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {  
+  background-image: url('images/arka plan.avif'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  color: #d3d3d3; 
+  font-family: Arial, sans-serif;
+  height: 100vh;  
+  opacity: 0.7;
+}
+
+
+
+header {
+  background-color: #000; 
+  color: #d3d3d3; 
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;   /*burda header ı üst kısma pozisyon olarak sabitledim böylece sayfa hareket etse de aynı kalacak*/
+  top: 0;
+  left: 0;
+  z-index: 1000; /*bu özelliği yei öğrendim headerın her zaman ön katmanda olmasını sağlıyor*/
+  border-bottom: 1px solid #555;
+}
+
+/* mercedes yazısına verdiğim stiller */
+.header-left {
+  font-size: 2em;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-right: 20px; 
+  color: #d3d3d3; 
+  font-style: italic;
+}
+
+
+.header-divider {
+  height: 60px; 
+  width: 4px; 
+  background: linear-gradient(to bottom, #555, #999);  
+  border-radius: 2px; 
+  margin: 0 20px; 
+}
+
+
+.header-right {  /*buurası love it - hate it.... kısmı için gerekli düzenlemeleri içeriyor*/ 
+  opacity: 0.9;
+  font-size: 0.8em;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  font-style: italic;
+}
+
+/* mercedes logosunu ortaya sabitlemek için logo classı nı düzenledim  */
+.logo {
+  height: 80px; 
+  margin-left: 20px; 
+}
+
+
+.trademark {
+  font-size: 1.75em;
+  color: #c0c0c0; 
+  margin-left: 20px; 
+  font-style: italic; 
+  display: flex; 
+  align-items: center; 
+  opacity: 0.9; 
+  transition: color 0.3s ease;  /*bu kısımdaki özellik için  internette yararlandım tasarımı estetikleştirmkek için */
+}
+
+
+.trademark:hover {
+  color: #d3d3d3; /* Fareyle üzerine gelince renk değişimi */
+}
+
+/* Footer Stili */
+footer {
+  height: 160px; /* Footer yüksekliği (bu yüksklği üstteki headerın 2 katı , diğeri 80 di) */
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #d3d3d3; 
+  position: fixed; 
+  bottom: 0; 
+  left: 0;
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+
+.footer-blocks {
+  display: flex;
+  gap: 15px; 
+  justify-content: center; 
+  margin-top: 20px; 
+}
+
+.footer-block {
+  background: linear-gradient(135deg, #3b3b3b, #c0c0c0); 
+  color: #d3d3d3;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.footer-block:hover {
+  color: #ffffff; 
+  background: linear-gradient(135deg, #7f7f7f, #ffffff); 
+  transform: translateY(-5px); 
+}
+
+
+
+.content {
+  display: flex; 
+  position: absolute; 
+  top: 80px; 
+  bottom: 160px; 
+  left: 0; 
+  right: 0; 
+}
+
+
+.left-column {
+  flex: 0 0 15.3%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px; 
+  overflow-y: auto; /* Dikey kaydırmada eğer bir taşma olursa devreye girecek*/
+  max-height: calc(100vh - 240px); /* bu kısımda header ve footer arasında kalan alan kullanmak istedim */
+}                               /*bu kısmın nasıl yapıldığını bilemdiğim için  internetten yararlandım*/
+
+
+.model-list {
+  list-style-type: none;  /*düz bir liste için yani başında herhangi bi işaret olmayan */
+  padding: 0;
+}
+
+.model-list li {
+  font-weight: bold; 
+  font-size: 1em;
+  color: #d3d3d3;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.model-list li:hover {
+  color: #e0e0e0; 
+}
+
+
+.model-image {
+  width: 100%; 
+  height: auto; 
+  margin-top: 10px; 
+  border-radius: 8px; 
+  transition: transform 0.3s ease;
+}
+
+.model-list li:hover .model-image {
+  transform: scale(1.05); 
+}
+
+
+.model-description {
+  
+  display: none;
+  background: linear-gradient(135deg, #4f4f4f, #a0c1d1); 
+  color: #ffffff; 
+  font-size: 0.9em;
+  padding: 12px; 
+  border-radius: 8px; 
+  margin-top: 10px; 
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); 
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  opacity: 0.98;
+}
+
+.model-list li:hover .model-description {
+  display: block;
+  transform: translateY(10px); 
+  opacity: 1; 
+}
+
+
+
+
+
+.right-column {
+  flex: 1;
+  margin-left: 800px;
+  background: rgba(50, 50, 50, 0.8); 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  color: #e0e0e0; 
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #e0e0e0; 
+  cursor: pointer;
+  padding: 10px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #ffffff; 
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7); 
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+  display: none; 
+  background: rgba(60, 60, 60, 0.9); 
+  border-radius: 5px;
+}
+
+.menu-item:hover .submenu {
+  display: block; 
+}
+
+.submenu-item {
+  font-size: 1em;
+  color: #c0c0c0; 
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.submenu-item:hover {
+  color: #ffffff; 
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, 0.6); 
+}
